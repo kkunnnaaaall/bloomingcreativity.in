@@ -12,7 +12,18 @@
 </head>
 
 <body>
-   <header>
+  <!-- Fullscreen Image Modal with Navigation -->
+<div id="imgModal" class="img-modal">
+  <span class="img-close" id="imgClose">&times;</span>
+  <img class="img-modal-content" id="modalImage">
+
+  <!-- Left and Right Arrows -->
+  <a class="img-nav left" id="imgPrev">&#10094;</a>
+  <a class="img-nav right" id="imgNext">&#10095;</a>
+</div>
+
+
+  <header>
     <div class="header-container">
       <a href="./index.html">
         <img src="./img/logo.JPG" alt="Blooming Creativity Logo" class="logo" height="100">
@@ -60,7 +71,7 @@
     </div>
   </div>
 
-   <div class="work-container container">
+  <div class="work-container container">
     <div class="image-grid">
       <img src="img/ganpati (2).JPG" class="img img1" alt="Image 1">
       <img src="./img/moon.JPG" class="img img2" alt="Image 2">
@@ -86,7 +97,8 @@
     <div class="container footer-content">
       <div class="footer-left">
         <p class="copyright">© 2025 Blooming Creativity. All rights reserved.</p>
-        <p class="made-by">Made with ❤️ by <a href="https://www.instagram.com/kkunnnaaaall" target="_blank">Kunal Mistry</a></p>
+        <p class="made-by">Made with ❤️ by <a href="https://www.instagram.com/kkunnnaaaall" target="_blank">Kunal
+            Mistry</a></p>
       </div>
 
       <div class="social">
@@ -103,6 +115,72 @@
       </div>
     </div>
   </footer>
+
+  <script>
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.getElementById("imgClose");
+  const prevBtn = document.getElementById("imgPrev");
+  const nextBtn = document.getElementById("imgNext");
+
+  const images = Array.from(document.querySelectorAll(".img"));
+  let currentIndex = 0;
+
+  function openModal(index) {
+    currentIndex = index;
+    modalImg.src = images[currentIndex].src;
+    modal.style.display = "flex";
+  }
+
+  images.forEach((image, index) => {
+    image.addEventListener("click", () => openModal(index));
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    modalImg.src = images[currentIndex].src;
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    modalImg.src = images[currentIndex].src;
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // Swipe support for mobile
+  let startX = 0;
+
+  modal.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  modal.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diffX = startX - endX;
+
+    if (diffX > 50) {
+      // swipe left -> next
+      currentIndex = (currentIndex + 1) % images.length;
+      modalImg.src = images[currentIndex].src;
+    } else if (diffX < -50) {
+      // swipe right -> prev
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      modalImg.src = images[currentIndex].src;
+    }
+  });
+</script>
+
+
+
 
   <script src="./js/index.js"></script>
 </body>

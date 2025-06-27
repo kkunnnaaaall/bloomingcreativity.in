@@ -91,3 +91,90 @@
     transform: translate(-50%, -50%) scale(1.05);
   }
 }
+
+
+.img-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.img-modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px black;
+}
+
+.img-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.img-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.img-modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px black;
+}
+
+.img-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* Arrows */
+.img-nav {
+  position: absolute;
+  top: 50%;
+  font-size: 60px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10000;
+  transition: 0.2s;
+}
+
+.img-nav.left {
+  left: 20px;
+}
+
+.img-nav.right {
+  right: 20px;
+}
+
+.img-nav:hover {
+  color: #ff69b4;
+}
+
