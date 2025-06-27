@@ -12,111 +12,147 @@
 </head>
 
 <body>
-  <!-- Fullscreen Image Modal with Navigation -->
-<div id="imgModal" class="img-modal">
-  <span class="img-close" id="imgClose">&times;</span>
-  <img class="img-modal-content" id="modalImage">
+  <div id="skeleton-loader">
+    <div class="skeleton-header"></div>
 
-  <!-- Left and Right Arrows -->
-  <a class="img-nav left" id="imgPrev">&#10094;</a>
-  <a class="img-nav right" id="imgNext">&#10095;</a>
-</div>
-
-
-  <header>
-    <div class="header-container">
-      <a href="./index.html">
-        <img src="./img/logo.JPG" alt="Blooming Creativity Logo" class="logo" height="100">
-      </a>
-
-      <div class="nav-center">
-        <h1>Blooming Creativity</h1>
-
-        <div class="hamburger" id="hamburger">
-          <i class="fas fa-bars"></i>
-        </div>
-
-        <nav id="nav-links">
-          <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./index.html#about">About</a></li>
-            <li><a href="./workshop.html">Workshops</a></li>
-            <li><a href="./gallery.html">Gallery</a></li>
-            <li><a href="https://forms.gle/uBvAGF3mYFR3yt136" target="_blank">Inquiry</a></li>
-          </ul>
-        </nav>
+    <!-- Section 1 (text left, images right) -->
+    <div class="skeleton-section">
+      <div class="skeleton-title" style="width: 80%;"></div>
+      <div class="skeleton-box" style="height: 80px;"></div>
+      <div class="skeleton-img-grid">
+        <div class="skeleton-box"></div>
+        <div class="skeleton-box"></div>
+        <div class="skeleton-box"></div>
+        <div class="skeleton-box"></div>
+        <div class="skeleton-box"></div>
       </div>
-
-    </div>
-  </header>
-
-  <div class="work-container container">
-    <div class="text-box">
-      <h2>Moonlight & Mosaic Art Workshop
-        @ Avadh Uthopia, Vapi | Berry & Lush Exhibition
-      </h2>
-      <p>Experience a magical evening of creativity at our Moonlight & Mosaic Art Workshop! Held at the stunning Avadh
-        Uthopia as part of the Berry & Lush Exhibition, this workshop invites you to unwind, explore your artistic side,
-        and create your own mosaic masterpiece under the stars.
-
-        All materials provided. No prior experience needed just bring your imagination!</p>
     </div>
 
-    <div class="image-grid">
-      <img src="img/ganpati (2).JPG" class="img img1" alt="Image 1">
-      <img src="./img/moon.JPG" class="img img2" alt="Image 2">
-      <img src="./img/IMG_6988.JPG" class="img img3" alt="Image 3">
-      <img src="./img/boho-art (4).JPG" class="img img4" alt="Image 4">
-      <img src="./img/IMG_6467.JPG" class="img img5" alt="Image 5">
+    <!-- Section 2 (images left, text right) -->
+    <div class="skeleton-section">
+      <div class="skeleton-img-grid">
+        <div class="skeleton-box"></div>
+        <div class="skeleton-box"></div>
+        <div class="skeleton-box"></div>
+        <div class="skeleton-box"></div>
+        <div class="skeleton-box"></div>
+      </div>
+      <div class="skeleton-title" style="width: 80%; margin-top: 30px;"></div>
+      <div class="skeleton-box" style="height: 80px;"></div>
     </div>
+
+    <div class="skeleton-footer"></div>
   </div>
 
-  <div class="work-container container">
-    <div class="image-grid">
-      <img src="img/ganpati (2).JPG" class="img img1" alt="Image 1">
-      <img src="./img/moon.JPG" class="img img2" alt="Image 2">
-      <img src="./img/IMG_6988.JPG" class="img img3" alt="Image 3">
-      <img src="./img/boho-art (4).JPG" class="img img4" alt="Image 4">
-      <img src="./img/IMG_6467.JPG" class="img img5" alt="Image 5">
+  <div id="main-content" style="display: none;">
+    <!-- Fullscreen Image Modal with Navigation -->
+    <div id="imgModal" class="img-modal">
+      <span class="img-close" id="imgClose">&times;</span>
+      <img class="img-modal-content" id="modalImage">
+
+      <!-- Left and Right Arrows -->
+      <a class="img-nav left" id="imgPrev">&#10094;</a>
+      <a class="img-nav right" id="imgNext">&#10095;</a>
     </div>
 
-    <div class="text-box">
-      <h2>Moonlight & Mosaic Art Workshop
-        @ Avadh Uthopia, Vapi | Berry & Lush Exhibition
-      </h2>
-      <p>Experience a magical evening of creativity at our Moonlight & Mosaic Art Workshop! Held at the stunning Avadh
-        Uthopia as part of the Berry & Lush Exhibition, this workshop invites you to unwind, explore your artistic side,
-        and create your own mosaic masterpiece under the stars.
-        All materials provided. No prior experience needed just bring your imagination!</p>
-    </div>
-  </div>
 
+    <header>
+      <div class="header-container">
+        <a href="./index.html">
+          <img src="./img/logo.JPG" alt="Blooming Creativity Logo" class="logo" height="100">
+        </a>
 
+        <div class="nav-center">
+          <h1>Blooming Creativity</h1>
 
-  <footer>
-    <div class="container footer-content">
-      <div class="footer-left">
-        <p class="copyright">© 2025 Blooming Creativity. All rights reserved.</p>
-        <p class="made-by">Made with ❤️ by <a href="https://www.instagram.com/kkunnnaaaall" target="_blank">Kunal
-            Mistry</a></p>
+          <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+
+          <nav id="nav-links">
+            <ul>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./index.html#about">About</a></li>
+              <li><a href="./workshop.html">Workshops</a></li>
+              <li><a href="./gallery.html">Gallery</a></li>
+              <li><a href="https://forms.gle/uBvAGF3mYFR3yt136" target="_blank">Inquiry</a></li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+    </header>
+
+    <div class="work-container container">
+      <div class="text-box">
+        <h2>Moonlight & Mosaic Art Workshop
+          @ Avadh Uthopia, Vapi | Berry & Lush Exhibition
+        </h2>
+        <p>Experience a magical evening of creativity at our Moonlight & Mosaic Art Workshop! Held at the stunning Avadh
+          Uthopia as part of the Berry & Lush Exhibition, this workshop invites you to unwind, explore your artistic
+          side,
+          and create your own mosaic masterpiece under the stars.
+
+          All materials provided. No prior experience needed just bring your imagination!</p>
       </div>
 
-      <div class="social">
-        <p class="social-title">Connect with us</p>
-        <div class="icons">
-          <a href="https://www.facebook.com/share/1FQmMsg7KZ/" target="_blank" class="social-link">
-            <i class="fab fa-facebook fa-2xl"></i>
-          </a>
-          <a href="https://www.instagram.com/_blooming_creativity_?igsh=MWZ6dzNmczV3YWxtZQ==" target="_blank"
-            class="social-link">
-            <i class="fab fa-instagram fa-2xl"></i>
-          </a>
+      <div class="image-grid">
+        <img src="img/ganpati (2).JPG" class="img img1" alt="Image 1">
+        <img src="./img/moon.JPG" class="img img2" alt="Image 2">
+        <img src="./img/IMG_6988.JPG" class="img img3" alt="Image 3">
+        <img src="./img/boho-art (4).JPG" class="img img4" alt="Image 4">
+        <img src="./img/IMG_6467.JPG" class="img img5" alt="Image 5">
+      </div>
+    </div>
+
+    <div class="work-container container">
+      <div class="image-grid">
+        <img src="img/ganpati (2).JPG" class="img img1" alt="Image 1">
+        <img src="./img/moon.JPG" class="img img2" alt="Image 2">
+        <img src="./img/IMG_6988.JPG" class="img img3" alt="Image 3">
+        <img src="./img/boho-art (4).JPG" class="img img4" alt="Image 4">
+        <img src="./img/IMG_6467.JPG" class="img img5" alt="Image 5">
+      </div>
+
+      <div class="text-box">
+        <h2>Moonlight & Mosaic Art Workshop
+          @ Avadh Uthopia, Vapi | Berry & Lush Exhibition
+        </h2>
+        <p>Experience a magical evening of creativity at our Moonlight & Mosaic Art Workshop! Held at the stunning Avadh
+          Uthopia as part of the Berry & Lush Exhibition, this workshop invites you to unwind, explore your artistic
+          side,
+          and create your own mosaic masterpiece under the stars.
+          All materials provided. No prior experience needed just bring your imagination!</p>
+      </div>
+    </div>
+
+
+
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-left">
+          <p class="copyright">© 2025 Blooming Creativity. All rights reserved.</p>
+          <p class="made-by">Made with ❤️ by <a href="https://www.instagram.com/kkunnnaaaall" target="_blank">Kunal
+              Mistry</a></p>
+        </div>
+
+        <div class="social">
+          <p class="social-title">Connect with us</p>
+          <div class="icons">
+            <a href="https://www.facebook.com/share/1FQmMsg7KZ/" target="_blank" class="social-link">
+              <i class="fab fa-facebook fa-2xl"></i>
+            </a>
+            <a href="https://www.instagram.com/_blooming_creativity_?igsh=MWZ6dzNmczV3YWxtZQ==" target="_blank"
+              class="social-link">
+              <i class="fab fa-instagram fa-2xl"></i>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
-   <script src="./js/img-popup.js"></script>
+  <script src="./js/img-popup.js"></script>
   <script src="./js/index.js"></script>
 </body>
 
