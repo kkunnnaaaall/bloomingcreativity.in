@@ -1,5 +1,4 @@
-
-  const modal = document.getElementById("imgModal");
+ const modal = document.getElementById("imgModal");
   const modalImg = document.getElementById("modalImage");
   const closeBtn = document.getElementById("imgClose");
   const prevBtn = document.getElementById("imgPrev");
@@ -14,6 +13,16 @@
     modal.style.display = "flex";
   }
 
+  function animateChange(index, direction) {
+    const animClass = direction === 'left' ? 'slide-left' : 'slide-right';
+    modalImg.classList.add(animClass);
+
+    setTimeout(() => {
+      modalImg.src = images[index].src;
+      modalImg.classList.remove(animClass);
+    }, 200);
+  }
+
   images.forEach((image, index) => {
     image.addEventListener("click", () => openModal(index));
   });
@@ -22,14 +31,16 @@
     modal.style.display = "none";
   });
 
-  nextBtn.addEventListener("click", () => {
+  nextBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
     currentIndex = (currentIndex + 1) % images.length;
-    modalImg.src = images[currentIndex].src;
+    animateChange(currentIndex, 'left');
   });
 
-  prevBtn.addEventListener("click", () => {
+  prevBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
     currentIndex = (currentIndex - 1 + images.length) % images.length;
-    modalImg.src = images[currentIndex].src;
+    animateChange(currentIndex, 'right');
   });
 
   modal.addEventListener("click", (e) => {
@@ -38,7 +49,7 @@
     }
   });
 
-  // Swipe support for mobile
+  // Swipe support
   let startX = 0;
 
   modal.addEventListener("touchstart", (e) => {
@@ -52,10 +63,10 @@
     if (diffX > 50) {
       // swipe left -> next
       currentIndex = (currentIndex + 1) % images.length;
-      modalImg.src = images[currentIndex].src;
+      animateChange(currentIndex, 'left');
     } else if (diffX < -50) {
       // swipe right -> prev
       currentIndex = (currentIndex - 1 + images.length) % images.length;
-      modalImg.src = images[currentIndex].src;
+      animateChange(currentIndex, 'right');
     }
   });
