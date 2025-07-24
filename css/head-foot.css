@@ -107,6 +107,10 @@ footer {
   color: #fff;
 }
 
+.made-by a{
+  text-decoration: underline;
+}
+
 /* shimmer animation */
 @keyframes shimmer {
   0% {
