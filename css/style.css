@@ -2,13 +2,17 @@ li {
   list-style: none;
 }
 
-
 .hero {
   background: url('../img/IMG_8964.jpeg') no-repeat center center/cover;
   padding: 250px 0;
   text-align: center;
   color: beige;
   height: auto;
+}
+
+.container h2, p{
+  color: #FFFFFF;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero h2 {
