@@ -19,7 +19,7 @@ a {
 }
 
 .logo {
-  height: 70px;
+  height: 80px;
   border-radius: 50%;
   width: auto;
 }
@@ -27,7 +27,7 @@ a {
 .header-container {
   display: flex;
   align-items: center;
-  background-color: #FDFDFD;
+  background-color: #f9c9d3;
   width: 100%;
   padding: 10px 20px;
   box-sizing: border-box;
@@ -50,7 +50,7 @@ a {
 
 .nav-center nav a {
   text-decoration: none;
-  color: #595959;
+  color: #611335;
   font-weight: bold;
   position: relative; 
   padding-bottom: 5px;
@@ -63,7 +63,7 @@ a {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #FFDAB9;
+  background-color: #5D1C3C;
 
   transform: scaleX(0);
   transform-origin: left;
