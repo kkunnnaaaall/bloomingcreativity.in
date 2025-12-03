@@ -16,41 +16,33 @@
 </head>
 
 <body>
-   <div id="skeleton-loader" style="position: fixed; inset: 0; background: var(--bg-paper); z-index: 9999; padding: 20px; overflow-y: hidden;">
-    
-    <!-- 1. Header Skeleton -->
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
-      <div class="skeleton-box" style="width: 60px; height: 60px; border-radius: 50%;"></div>
-      <div class="skeleton-box" style="width: 40px; height: 40px; border-radius: 8px;"></div>
-    </div>
+  <div id="skeleton-loader">
+    <div id="skeleton-loader">
+      <div class="skeleton-header"></div>
 
-    <!-- 2. Gallery Content Skeleton -->
-    <div style="display: flex; flex-direction: column; gap: 50px;">
-      
-      <!-- Section A: Title + 2x2 Grid -->
-      <div>
-        <!-- Centered Title -->
-        <div class="skeleton-title" style="width: 50%; height: 40px; margin: 0 auto 30px; border-radius: 20px;"></div>
-        
-        <!-- Image Grid Simulation -->
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
-           <div class="skeleton-box" style="aspect-ratio: 1/1; border-radius: 8px;"></div>
-           <div class="skeleton-box" style="aspect-ratio: 1/1; border-radius: 8px;"></div>
-           <div class="skeleton-box" style="aspect-ratio: 1/1; border-radius: 8px;"></div>
-           <div class="skeleton-box" style="aspect-ratio: 1/1; border-radius: 8px;"></div>
+      <div class="skeleton-section">
+        <div class="skeleton-title"></div>
+        <div class="skeleton-img-grid">
+          <div class="skeleton-box"></div>
+          <div class="skeleton-box"></div>
+          <div class="skeleton-box"></div>
+          <div class="skeleton-box"></div>
         </div>
       </div>
 
-      <!-- Section B: Faded Preview of next section -->
-      <div style="opacity: 0.4;">
-        <div class="skeleton-title" style="width: 40%; height: 40px; margin: 0 auto 30px; border-radius: 20px;"></div>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
-           <div class="skeleton-box" style="aspect-ratio: 1/1; border-radius: 8px;"></div>
-           <div class="skeleton-box" style="aspect-ratio: 1/1; border-radius: 8px;"></div>
+      <div class="skeleton-section">
+        <div class="skeleton-title"></div>
+        <div class="skeleton-img-grid">
+          <div class="skeleton-box"></div>
+          <div class="skeleton-box"></div>
+          <div class="skeleton-box"></div>
+          <div class="skeleton-box"></div>
         </div>
       </div>
 
+      <div class="skeleton-footer"></div>
     </div>
+
   </div>
 
   <div id="main-content" style="display: none;">
