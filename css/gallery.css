@@ -1,39 +1,127 @@
-@keyframes appear {
-  from {
+#main-content {
+  margin-top: 90px;
+}
+
+.img-container {
+    padding: var(--spacing-md) 5%;
+    margin-bottom: var(--spacing-lg);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    /* Fade in animation setup */
     opacity: 0;
-    scale: 0.5;
-  }
-
-  to {
-    opacity: 1;
-    scale: 1;
-  }
+    animation: fadeReveal 1s ease-out forwards;
 }
 
-.img-container{
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-  margin-bottom: 25px;
+/* Stagger animations for subsequent containers */
+.img-container:nth-child(2) { animation-delay: 0.2s; }
+.img-container:nth-child(3) { animation-delay: 0.4s; }
+.img-container:nth-child(4) { animation-delay: 0.6s; }
+.img-container:nth-child(5) { animation-delay: 0.8s; }
+
+/* 2. TYPOGRAPHY (Artistic Headers) */
+.img-container h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
 }
 
+/* Brush stroke effect behind the title */
+.img-container h1::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: 12px;
+    background: var(--secondary);
+    opacity: 0.3;
+    z-index: -1;
+    border-radius: 4px;
+    transform: rotate(-1deg);
+    transition: width 0.4s ease;
+}
+
+.img-container:hover h1::after {
+    width: calc(100% + 40px);
+    opacity: 0.5;
+}
+
+/* 3. GALLERY GRID (Responsive & Organic) */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  margin-top: 5px;
+    display: grid;
+    gap: 1rem;
+    /* Mobile First: 2 Columns for better visibility than 1 */
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
 }
 
 .gallery-grid img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1; /* Square photos on mobile look neat */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    /* Initial state for hover effect */
+    filter: brightness(0.95);
 }
 
-.img-container h1 {
-  text-align: center;
+/* 4. DESKTOP STYLES (Elegant Row) */
+@media (min-width: 768px) {
+    .gallery-grid {
+        gap: 2rem;
+        grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+    }
+
+    .gallery-grid img {
+        aspect-ratio: 3 / 4; /* Portrait orientation looks more artistic on desktop */
+        border-radius: 12px;
+    }
+    
+    /* Add subtle vertical stagger for organic feel */
+    .gallery-grid img:nth-child(even) {
+        transform: translateY(20px);
+    }
+    
+    .gallery-grid:hover img:nth-child(even) {
+        transform: translateY(20px) scale(0.98); /* Reset slightly on parent hover */
+    }
+}
+
+/* 5. HOVER INTERACTIONS */
+.gallery-grid img:hover {
+    transform: scale(1.05) rotate(1deg) !important; /* Override stagger */
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    filter: brightness(1.1);
+    border-radius: 16px 4px 16px 4px; /* Organic morph */
+}
+
+/* 6. ANIMATION KEYFRAMES */
+@keyframes fadeReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Add a paper texture feel to images */
+.gallery-grid img {
+    position: relative;
+    background: #fff;
+    padding: 5px; /* White border framing */
 }
